@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mergen Dergisi • Resmî Web Sayfası</title>
+  <meta name="description" content="Gazipaşa Fen Lisesi Mergen Dergisi: Bilim, kültür ve araştırma yazıları. Arşiv, sayılar ve duyurular." />
+  <meta name="color-scheme" content="light only">
+  <style>
+    :root{
+      --bg:#f8fafc;        /* zinc-50 */
+      --bg-soft:#ffffff;   /* white */
+      --ink:#0f172a;       /* slate-900 */
+      --muted:#475569;     /* slate-600 */
+      --brand:#0ea5e9;     /* sky-500 */
+      --brand-dark:#0284c7;/* sky-600 */
+      --ring: rgba(14,165,233,.35);
+      --card:#ffffff;
+      --shadow: 0 6px 30px rgba(2, 132, 199, .10);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{color:var(--brand-dark)}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header.site{
+      position:sticky;top:0;z-index:50;background:rgba(248,250,252,.85);backdrop-filter:saturate(150%) blur(8px);
+      border-bottom:1px solid #e5e7eb
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand-logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:
+      radial-gradient(60% 80% at 40% 30%, rgba(14,165,233,.25), transparent 60%),
+      radial-gradient(60% 80% at 70% 70%, rgba(2,132,199,.25), transparent 60%),
+      linear-gradient(135deg, #e0f2fe, #fff);
+      box-shadow:var(--shadow)
+    }
+    .brand b{letter-spacing:.2px}
+    .nav a{font-weight:600;color:var(--muted)}
+    .nav a:hover{color:var(--ink)}
+    .hero{position:relative;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;
+      background:
+        radial-gradient(60% 60% at 10% 10%, rgba(14,165,233,.12), transparent 60%),
+        radial-gradient(60% 60% at 90% 20%, rgba(2,132,199,.10), transparent 60%),
+        linear-gradient(180deg,#fff, #f0f9ff 70%);
+    }
+    .hero-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;padding:42px 0}
+    .hero h1{font-size:clamp(28px,4.4vw,44px);margin:0 0 12px;font-weight:900;letter-spacing:.2px}
+    .hero p{margin:0 0 18px;color:var(--muted);font-size:clamp(15px,2.1vw,18px)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid #e5e7eb;background:var(--bg-soft);font-weight:700;box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,#0ea5e9,#38bdf8);color:white;border-color:transparent}
+    .btn.primary:hover{filter:brightness(.96)}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .grid{display:grid;gap:18px}
+    .grid.cols-2{grid-template-columns:1fr 1fr}
+    .section{padding:28px 0}
+    h2{font-size:clamp(22px,3.2vw,30px);margin:0 0 14px}
+    h3{font-size:20px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .respect{font-style:italic;border-left:4px solid var(--brand);padding-left:14px}
+    figure{margin:0}
+    figure img{width:100%;border-radius:14px;border:1px solid #e5e7eb;box-shadow:var(--shadow)}
+    figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+    details{border:1px solid #e5e7eb;border-radius:12px;padding:14px;background:#fff}
+    details summary{cursor:pointer;font-weight:700}
+    .archive-list{display:grid;gap:12px}
+    .archive-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+    .tag{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:#e0f2fe;color:#075985;font-weight:700;font-size:12px}
+    .meta{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:14px}
+    footer{margin-top:44px;padding:28px 0;border-top:1px solid #e5e7eb;background:#fff}
+    .footer-grid{display:grid;gap:18px;grid-template-columns:2fr 1fr}
+    .small{font-size:13px}
+    @media (max-width:960px){
+      .hero-wrap{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .archive-item{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">🜲</div>
+        <div>
+          <div style="font-size:15px;color:var(--muted);font-weight:700;letter-spacing:.6px;">GAZİPAŞA FEN LİSESİ</div>
+          <b style="font-size:18px">Mergen Dergisi</b>
+        </div>
+      </div>
+      <nav style="display:flex;gap:16px">
+        <a href="#hakkimizda">Hakkında</a>
+        <a href="#ataturk">Atatürk</a>
+        
+        <a href="#arsiv">Mergen Arşivi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <h1>Mergen Geleceğin Fikir Liderleri Dergisi — Bilim, Kültür ve Araştırma</h1>
+          <p>Gazipaşa Fen Lisesi öğrencilerinin kaleminden özgün yazılar, okul projeleri ve seçme dosyalar. Bu sayfa, e‑ISSN başvuru gereklerine uygun olarak derginin web sürümünü sunar.</p>
+          <div class="cta">
+            <a class="btn primary" href="#arsiv">📚 Arşive Git</a>
+            <a class="btn" href="#hakkimizda">ℹ️ Dergi Hakkında</a>
+          </div>
+        </div>
+       
+    </section>
+
+    <section id="hakkimizda" class="section">
+      <div class="container grid cols-2">
+        <div class="card">
+          <h2>Dergi Hakkında</h2>
+          <p class="muted">Mergen Dergisi; öğrencilerin bilimsel merakı, kültürel birikimi ve yazma disiplinini destekleyen bir okul yayınıdır. Amaç, lise düzeyinde yapılabilir araştırma taslakları üretmek, kaynak göstermeyi alışkanlık haline getirmek ve şeffaf bir arşiv oluşturmaktır.</p>
+          <ul class="muted" style="line-height:1.8">
+            <li>Yayın Aralığı: Dönemsel</li>
+            <li>Yayın Ortamı: Dijital (Web + PDF)</li>
+            
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Kısaca Yayın İlkeleri</h3>
+          <ul class="muted" style="line-height:1.8">
+            <li>Kaynak ve atıf gösterimi zorunludur (APA 7 ).</li>
+            <li>Özgünlük oranı hedefi: <b>≤ %15</b> (benzerlik).</li>
+            <li>Her metin için kısa <b>Özet – Yöntem – Sonuç</b> çerçevesi teşvik edilir.</li>
+            <li>Tüm sayıların web sayfası görünümü + PDF sürümü arşivlenir.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="ataturk" class="section">
+      <div class="container grid cols-2">
+        <figure>
+          <!-- Atatürk görseli: /assets/ataturk.jpg yerleşimini kullanın -->
+          
+          
+        </figure>
+        <div class="card">
+          <h2>Atatürk’e Saygıyla</h2>
+          <p class="muted">Ey Türk gençliği! Birinci vazifen; Türk istiklalini, Türk cumhuriyetini, ilelebet muhafaza ve müdafaa etmektir.
+
+            Mevcudiyetinin ve istikbalinin yegâne temeli budur. Bu temel, senin en kıymetli hazinendir. İstikbalde dahi seni bu hazineden mahrum etmek isteyecek dâhilî ve haricî bedhahların olacaktır. Bir gün, istiklal ve cumhuriyeti müdafaa mecburiyetine düşersen, vazifeye atılmak için içinde bulunacağın vaziyetin imkân ve şeraitini düşünmeyeceksin. Bu imkân ve şerait, çok namüsait bir mahiyette tezahür edebilir. İstiklal ve cumhuriyetine kastedecek düşmanlar, bütün dünyada emsali görülmemiş bir galibiyetin mümessili olabilirler. Cebren ve hile ile aziz vatanın bütün kaleleri zapt edilmiş, bütün tersanelerine girilmiş, bütün orduları dağıtılmış ve memleketin her köşesi bilfiil işgal edilmiş olabilir. Bütün bu şeraitten daha elim ve daha vahim olmak üzere, memleketin dâhilinde iktidara sahip olanlar, gaflet ve dalalet ve hatta hıyanet içinde bulunabilirler. Hatta bu iktidar sahipleri, şahsi menfaatlerini müstevlilerin siyasi emelleriyle tevhit edebilirler. Millet, fakruzaruret içinde harap ve bitap düşmüş olabilir.
+         
+            Ey Türk istikbalinin evladı! İşte, bu ahval ve şerait içinde dahi vazifen, Türk istiklal ve cumhuriyetini kurtarmaktır. Muhtaç olduğun kudret, damarlarındaki asil kanda mevcuttur.</p>
+          
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="arsiv" class="section">
+      <div class="container">
+        <h2>Mergen Geleceğin Fikir Liderleri Dergisi Arşivi</h2>
+        <p class="muted">Aşağıda web sayfası görünümü ve PDF bağlantılarıyla iki sayı erişime açılmıştır. Her sayı için ayrı bir içerik sayfası önerilir; bu sayfa, e‑ISSN gereklilikleri kapsamında ana indeks işlevi görür.</p>
+        <div class="archive-list">
+          <div class="archive-item">
+            <div>
+              <div class="meta"><span class="tag">Sayı 2</span><span>•</span><span class="small">Haziran 2025</span></div>
+              <h3 style="margin:6px 0 6px">Mergen – Haziran 2025</h3>
+             
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn" href="mergen2025.html">Web Sayfası</a>
+              <a class="btn" href="dergi2025.pdf" target="_blank" rel="noopener">PDF İndir</a>
+            </div>
+          </div>
+
+          <div class="archive-item">
+            <div>
+              <div class="meta"><span class="tag">Sayı 1</span><span>•</span><span class="small">Aralık 2025</span></div>
+              <h3 style="margin:6px 0 6px">Mergen – Haziran 2024</h3>
+              <p class="muted small" style="margin:0">Öne çıkanlar: Yerel ekoloji, yapay zekâ ve etiği, okul projeleri.</p>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn" href="mergen2024.html">Web Sayfası</a>
+              <a class="btn" href="dergi2024.pdf" target="_blank" rel="noopener">PDF İndir</a>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <b>Mergen Dergisi</b>
+        <p class="small muted">© <span id="yıl"></span> Gazipaşa Fen Lisesi. Tüm hakları saklıdır. Bu web sayfası GitHub Pages üzerinde barındırılmaktadır.</p>
+        
+      </div>
+      
+    </div>
+    <script>
+      document.getElementById('yıl').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
